@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
       libffi-dev \
       libpq-dev \
       curl \
-      ping \
+      inetutils-ping \
     && pip install \
       superset==$SUPERSET_VERSION \
       mysqlclient==1.3.9 \
