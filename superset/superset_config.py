@@ -46,12 +46,3 @@ AUTH_LDAP_UID_FIELD = os.getenv("AUTH_LDAP_UID_FIELD")
 AUTH_USER_REGISTRATION = os.getenv("AUTH_USER_REGISTRATION", "0") in ("True", "true", "1")
 AUTH_USER_REGISTRATION_ROLE = os.getenv("AUTH_USER_REGISTRATION_ROLE")
 
-# Import all the env variables prefixed with "SUPERSET_"
-config_keys = [c for c in os.environ if c.startswith("SUPERSET_")]
-for key in config_keys:
-    globals()[key[8:]] = os.environ[key]
-
-# This file also allows you to define configuration parameters used by
-# Flask App Builder, the web framework used by Caravel. Please consult the
-# Flask App Builder Documentation for more information on how to configure
-# Caravel: http://flask-appbuilder.readthedocs.org/en/latest/config.html
