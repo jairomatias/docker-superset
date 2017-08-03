@@ -6,7 +6,7 @@ import os
 # ---------------------------------------------------------
 ROW_LIMIT = int(os.getenv("ROW_LIMIT", 50000))
 WEBSERVER_THREADS = int(os.getenv("WEBSERVER_THREADS", 8))
-SUPERSET_WORKERS = int(os.getenv("SUPERSET_WORKERS", 8))
+SUPERSET_WORKERS = int(os.getenv("SUPERSET_WORKERS", 24))
 
 SUPERSET_WEBSERVER_PORT = int(os.getenv("SUPERSET_WEBSERVER_PORT", 8088))
 # ---------------------------------------------------------
