@@ -4,8 +4,9 @@ import os
 # ---------------------------------------------------------
 # Caravel specific config
 # ---------------------------------------------------------
-ROW_LIMIT = int(os.getenv("ROW_LIMIT", 5000))
+ROW_LIMIT = int(os.getenv("ROW_LIMIT", 50000))
 WEBSERVER_THREADS = int(os.getenv("WEBSERVER_THREADS", 8))
+SUPERSET_WORKERS = int(os.getenv("SUPERSET_WORKERS", 24))
 
 SUPERSET_WEBSERVER_PORT = int(os.getenv("SUPERSET_WEBSERVER_PORT", 8088))
 # ---------------------------------------------------------
@@ -45,12 +46,3 @@ AUTH_LDAP_UID_FIELD = os.getenv("AUTH_LDAP_UID_FIELD")
 AUTH_USER_REGISTRATION = os.getenv("AUTH_USER_REGISTRATION", "0") in ("True", "true", "1")
 AUTH_USER_REGISTRATION_ROLE = os.getenv("AUTH_USER_REGISTRATION_ROLE")
 
-# Import all the env variables prefixed with "SUPERSET_"
-config_keys = [c for c in os.environ if c.startswith("SUPERSET_")]
-for key in config_keys:
-    globals()[key[8:]] = os.environ[key]
-
-# This file also allows you to define configuration parameters used by
-# Flask App Builder, the web framework used by Caravel. Please consult the
-# Flask App Builder Documentation for more information on how to configure
-# Caravel: http://flask-appbuilder.readthedocs.org/en/latest/config.html
