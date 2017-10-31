@@ -23,7 +23,7 @@ RUN apt-get update && apt-get install -y \
       python-ldap==2.4.28 \
       psycopg2==2.6.2 \
       redis==2.10.5 \
-      sqlalchemy-redshift==0.5.0
+      sqlalchemy-redshift==0.7.0
 
 # Default config
 ENV LANG=C.UTF-8 \
